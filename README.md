@@ -1,0 +1,2 @@
+# MAF
+MSIT AI Fair
