@@ -146,13 +146,13 @@ class ClassificationMetric(DataMetric):
         super(ClassificationMetric, self).__init__(dataset, privilege, unprivilege)
         self.prediction_vector = prediction_vector
         self.target_label = target_label_name
-        
+        self.df = self.df.iloc[0:len(self.prediction_vector), :]
         self.conf_mat = self.confusion_matrix()
         self.performance = self.performance_measures()
         
     def confusion_matrix(self, privileged=None):
         # Get DataFrame
-        df = self.dataset.convert_to_dataframe()[0].copy()
+        df = self.df.copy()
 
         if not len(df) == len(self.prediction_vector):
             raise ValueError

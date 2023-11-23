@@ -86,7 +86,7 @@ class MLP(nn.Module):
 	def __init__(self, num_classes, input_size):
 		super(MLP, self).__init__()
 		self.feature = nn.Sequential(
-			nn.Linear(input_size, 100),
+			nn.Linear(input_size+1, 100),
 			nn.ReLU(),
 			nn.Linear(100, 100),
 			nn.ReLU(),
@@ -98,7 +98,8 @@ class MLP(nn.Module):
 
 	def forward(self, x, return_feat=False):
 		x = x.view(x.size(0), -1) / 255
-		feat = x = self.feature(x)
+		feat = self.feature(x)
+		x = feat.clone()
 		x = self.classifier(x)
 
 		if return_feat:
