@@ -72,11 +72,16 @@ Supported Python Configurations:
 | Windows | 3.8 – 3.11     |
 
 ### (Optional) Create a virtual environment
-MAF의 원활한 구동을 위해서는 특정 버전의 패키지들이 필요합니다. 시스템의 다른 프로젝트와 충돌할 수 있으므로 anaconda 가상 환경을 사용하는 것을 권장드립니다. 
+MAF의 원활한 구동을 위해서는 특정 버전의 패키지들이 필요합니다. 시스템의 다른 프로젝트와 충돌할 수 있으므로 anaconda 가상 환경 사용을 권장드립니다. 
 
-### Install with pip
-이 저장소의 최신 버전을 복제합니다.
+### Installation 
+1. 이 저장소의 최신 버전을 복제합니다.
 ```bash
 git clone https://github.com/konanaif/MAF2023.git
+```
+
+2. 필요한 패키지들을 설치합니다. 
+```bash
+conda install --file requirements.txt
 ```
 
