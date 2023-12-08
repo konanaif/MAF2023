@@ -86,7 +86,7 @@ class MLP(nn.Module):
 	def __init__(self, num_classes, input_size):
 		super(MLP, self).__init__()
 		self.feature = nn.Sequential(
-			nn.Linear(input_size+1, 100),
+			nn.Linear(input_size, 100),
 			nn.ReLU(),
 			nn.Linear(100, 100),
 			nn.ReLU(),
